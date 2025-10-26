@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Portfolio | About</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+<div class="droplet"></div>
+
+
+  <header>
+    <nav>
+      <h1>My Portfolio</h1>
+      <ul>
+        <li><a href="index.html" class="active">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <img src="assets/profile.jpg" alt="Profile" class="profile-img" />
+        <div>
+          <h2>About Me</h2>
+          <p>
+            Welcome to my personal portfolio! I am an enthusiastic IT undergraduate with expertise in full-stack development. Here, you will find my projects, technical skills, and achievements in web development, AI, and problem-solving. This platform reflects my journey as a developer and my passion for creating innovative solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 IT Undergraduate. All rights reserved.</p>
+  </footer>
+  <script>
+// Custom Cursor
+document.addEventListener('mousemove', (e) => {
+  const cursor = document.querySelector('.cursor');
+  const follower = document.querySelector('.cursor-follower');
+  
+  if (cursor && follower) {
+    cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+    setTimeout(() => {
+      follower.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+    }, 100);
+  }
+});
+
+// Magnetic Effect
+document.querySelectorAll('.magnetic').forEach(item => {
+  item.addEventListener('mousemove', (e) => {
+    const rect = item.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    item.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  });
+  
+  item.addEventListener('mouseleave', () => {
+    item.style.transform = 'translate(0, 0)';
+  });
+});
+
+// Scroll Progress Indicator
+window.addEventListener('scroll', () => {
+  const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  document.querySelector('.scroll-indicator').style.width = scrolled + '%';
+});
+
+// Loading Animation
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelector('.loading-overlay')?.remove();
+  }, 2000);
+});
+</script>
+
+</body>
+</html>
