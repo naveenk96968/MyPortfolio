@@ -324,3 +324,8 @@ footer {
   background: var(--cyber-purple);
   border-radius: 6px;
 }
+.profile-img{
+  content: url('assets/profile.jpg');
+  width: 150px;
+  height: 250px;
+}
